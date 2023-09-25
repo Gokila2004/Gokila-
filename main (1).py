@@ -1,22 +1,12 @@
-class Player:
-    def play(self):
-        print("The player is playing cricket.")
+def sort_students(students):
+    sorted_students = sorted(students, key=lambda x: x['cgpa'], reverse=True)
+    return sorted_students
+students = [
+    {'name': 'Alice', 'roll_number': 'A001', 'cgpa': 3.8},
+    {'name': 'Bob', 'roll_number': 'A002', 'cgpa': 3.5},
+    {'name': 'Charlie', 'roll_number': 'A003', 'cgpa': 3.9},
+]
 
-
-class Batsman(Player):
-    def play(self):
-        print("The batsman is batting.")
-
-
-class Bowler(Player):
-    def play(self):
-        print("The bowler is bowling.")
-
-
-# Create objects of Batsman and Bowler classes
-batsman = Batsman()
-bowler = Bowler()
-
-# Call the play() method for each object
-batsman.play()
-bowler.play()
+sorted_students = sort_students(students)
+for student in sorted_students:
+    print(student['name'], student['roll_number'], student['cgpa'])
